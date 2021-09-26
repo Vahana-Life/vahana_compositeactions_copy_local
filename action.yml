@@ -9,8 +9,8 @@ inputs:
 runs:
   using: "composite"
   steps: 
-     - run: rm -r D:\arma3work\drive\{{ inputs.workpath }}\*
+     - run: rm -r D:\arma3work\drive\${{ inputs.workpath }}\*
        shell: powershell
      
-     - run: Copy-item -Force -Recurse -Verbose * -Destination "D:\arma3work\drive\{{ inputs.workpath }}\" -Exclude (".github",".gitattributes","source", "*.png")
+     - run: Copy-item -Force -Recurse -Verbose * -Destination "D:\arma3work\drive\${{ inputs.workpath }}\" -Exclude (".github",".gitattributes","source", "*.png")
        shell: powershell
