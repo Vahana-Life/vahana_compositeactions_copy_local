@@ -5,7 +5,8 @@ inputs:
     description: 'The folder to copy the files to'
     required: true
     default: '~'
-
+outputs:
+  
 runs:
   using: "composite"
   steps: 
