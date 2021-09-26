@@ -11,6 +11,6 @@ runs:
   using: "composite"
   steps: 
     - run: rm -r D:\arma3work\drive\{{ inputs.workpath }}\*
-      shell: pwd
+      shell: pwsh
     - run: Copy-item -Force -Recurse -Verbose * -Destination "D:\arma3work\drive\{{ inputs.workpath }}\" -Exclude (".github",".gitattributes","source", "*.png")
-      shell: pwd
+      shell: pwsh
