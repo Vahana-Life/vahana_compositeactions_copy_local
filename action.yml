@@ -8,8 +8,8 @@ inputs:
 runs:
   using: "composite"
   steps: 
-     - run: rm -r D:\arma3work\drive\${{ inputs.workpath }}\*
+     - run: if (Test-Path -Path D:\arma3work\drive\${{ inputs.workpath }}) { Write-Output "Path exists!"; rm -r D:\arma3work\drive\${{ inputs.workpath }}\* } else { Write-Output "Path doesn't exist."; mkdir D:\arma3work\drive\${{ inputs.workpath }} }
        shell: powershell
-     
+       
      - run: Copy-item -Force -Recurse -Verbose * -Destination "D:\arma3work\drive\${{ inputs.workpath }}\" -Exclude (".github",".gitattributes","source", "*.png", ".git", ".gitignore")
        shell: powershell
